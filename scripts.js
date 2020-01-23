@@ -17,7 +17,7 @@ class Calculator {
     }
     appendNumber(number) {
         if (number === '.' && this.currentOperand.includes('.')) return // Two dots are not allowed in math
-        if (this.currentOperand.length > 16) return //Check the length of the number Entered by user
+        if (this.currentOperand.length > 15) return //Check the length of the number Entered by user
         this.currentOperand = this.currentOperand.toString() + number.toString();
 
     }
