@@ -16,7 +16,8 @@ class Calculator {
         this.currentOperand = this.currentOperand.toString().slice(0, -1)
     }
     appendNumber(number) {
-        if (number === '.' && this.currentOperand.includes('.')) return
+        if (number === '.' && this.currentOperand.includes('.')) return // Two dots are not allowed in math
+        if (this.currentOperand.length > 16) return //Check the length of the number Entered by user
         this.currentOperand = this.currentOperand.toString() + number.toString();
 
     }
@@ -69,7 +70,7 @@ class Calculator {
                 maximumFractionDigits: 0
             })
         }
-        if (decimalDigist != null && decimalDigist != "") {
+        if (decimalDigist != null) {
             return `${integerDisplay}.${decimalDigist}`
         } else if (stringNumber.slice(-1) === '.' && this.currentOperand.indexOf('.') === 1) {
             return `${integerDisplay}.`
